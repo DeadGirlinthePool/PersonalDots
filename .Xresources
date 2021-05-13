@@ -35,7 +35,13 @@
 *.color7:       #dedeef
 *.color15:      #dedeef
 
+urxvt.scrollBar_right: true
+urxvt.scrollBar_floating: true
+urxvt.thickness:6
+urxvt.scrollstyle: plain
+urxvt.scrollColor: #EC668A
+
+
 urxvt*depth: 32
-urxvt*background: rgba:0035/0035/0047/c850
 
 Rxvt.font: xft:bitstream vera sans mono:size=12:antialias=true
