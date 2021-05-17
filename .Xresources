@@ -1,47 +1,44 @@
+#urxvt.geometry: 95x28
+
 ! special
-*.foreground:   #bdc3be
-*.background:   #23232f
-*.cursorColor:  #bdc3be
+*.foreground:   #dedbeb
+*.background:   #2a2331
+*.cursorColor:  #dedbeb
 
 ! black
-*.color0:       #50505f
-*.color8:       #79798f
+*.color0:       #28222d
+*.color8:       #302838
 
 ! red
-*.color1:       #ff568e
-*.color9:       #ff6c9d
+*.color1:       #ed3f7f
+*.color9:       #fb5c8e
 
 ! green
-*.color2:       #64de83
-*.color10:      #64de83
+*.color2:       #a2baa8
+*.color10:      #bfd1c3
 
 ! yellow
-*.color3:       #efff73
-*.color11:      #efff73
+*.color3:       #eacac0
+*.color11:      #f0ddd8
 
 ! blue
-*.color4:       #73a9ff
-*.color12:      #81a2be
+*.color4:       #9985d1
+*.color12:      #b4a4de
 
 ! magenta
-*.color5:       #946ff7
-*.color13:      #b294bb
+*.color5:       #e68ac1
+*.color13:      #edabd2
 
 ! cyan
-*.color6:       #62c6da
-*.color14:      #62c6da
+*.color6:       #aabae7
+*.color14:      #c4d1f5
 
 ! white
-*.color7:       #dedeef
-*.color15:      #dedeef
+*.color7:       #dedbeb
+*.color15:      #edebf7
 
-urxvt.scrollBar_right: true
-urxvt.scrollBar_floating: true
-urxvt.thickness:6
-urxvt.scrollstyle: plain
-urxvt.scrollColor: #EC668A
+urxvt.scrollBar: false
 
-
-urxvt*depth: 32
+urxvt.depth: 32
 
 Rxvt.font: xft:bitstream vera sans mono:size=12:antialias=true
