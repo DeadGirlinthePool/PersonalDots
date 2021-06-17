@@ -1,0 +1,5 @@
+configuration {
+modi: "drun,window,run";
+kb-cancel: "Escape";
+}
+@import "/usr/share/rofi/themes/amora.rasi"

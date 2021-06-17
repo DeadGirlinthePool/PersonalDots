@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=true
+Exec=/usr/local/bin/cava
+Name=Cava
+GenericName=Audio Visualizer
+Icon=/home/jasmine/.icons/cava.png
