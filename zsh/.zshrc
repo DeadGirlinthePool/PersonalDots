@@ -45,8 +45,11 @@ bindkey -M menuselect 'down' vi-down-line-or-history
 bindkey -M menuselect 'up' vi-up-line-or-history
 bindkey -M menuselect 'right' vi-forward-char
 
-#load aliases
+# Load aliases
 source $HOME/.config/zsh/aliases
+
+# For being very cool:
+neofetch
 
 #Syntax Highlighting plug in. Apparently needs to be last
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor line)
