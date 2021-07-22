@@ -17,10 +17,10 @@ enable-ipc = true
 override-redirect = true
 fixed-center = true
 
-width = 98.5%
-height = 30
-offset-x = 18
-offset-y = 9
+width = 97%
+height = 35
+offset-x = 39
+offset-y = 12
 radius = 8
 
 background = ${colors.background}
@@ -31,7 +31,7 @@ padding = 8
 #module-margin-left = 6
 module-margin-right = 4
 
-font-0 = Code New Roman Nerd Font:pixelsize=12;1
+font-0 = Code New Roman Nerd Font:pixelsize=12;2
 font-1 = Code New Roman Nerd Font:pixelsize=24;2
 
 modules-left = bspwm mpd
@@ -46,10 +46,10 @@ scroll-down = bspwm-deskprev
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-width = 98.5%
-height = 30
-offset-x = 18
-offset-y = 9
+width = 97%
+height = 35
+offset-x = 39
+offset-y = 12
 radius = 8
 padding = 6
 
@@ -72,8 +72,9 @@ tray-padding = 18
 
 separator = %{T2} %{T-}
 
-font-0 = Code New Roman Nerd Font:pixelsize=12;1
+font-0 = Code New Roman Nerd Font:pixelsize=12;2
 font-1 = Code New Roman Nerd Font:pixelsize=24;3
+font-2= Code New Roman Nerd Font:pixelsize=12;4
 
 [module/mpd]
 type = internal/mpd
@@ -156,7 +157,7 @@ click-right = pavucontrol
 
 [module/power]
 type = custom/script
-exec = echo "⏻"
+exec = echo "⏻  %{T3}%{T-}"
 click-left = rofi -show p -modi p:~/Github/rofi-power-menu/rofi-power-menu -width 20 -lines 6 -xoffset 974 -yoffset -586
 
 ; vim:ft=dosini
