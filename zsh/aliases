@@ -1,3 +1,31 @@
+# Standard ls aliases, but for the objectively superior LsDeluxe
+
 alias l='lsd -F'
 alias la='lsd -A'
 alias ll='lsd -alF'
+
+# Faster bactracking through parent dirs
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+alias ........="cd ../../../../../../.."
+alias .........="cd ../../../../../../../.."
+alias ..........="cd ../../../../../../../../.."
+alias ...........="cd ../../../../../../../../../.."
+alias ............="cd ../../../../../../../../../../.."
+alias .............="cd ../../../../../../../../../../../.."
+
+
+# Sometimes you forget sudo and feel bad
+
+alias please='sudo $(history -p \!\!)'
+
+
+# When vim is opened by other programs, use neovim instead (and hope nothing breaks lol)
+
+alias vim='nvim'
+
