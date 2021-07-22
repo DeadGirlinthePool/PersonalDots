@@ -1,0 +1,162 @@
+[colors]
+background = #251f2b
+foreground = #dedbeb
+background-alt = #2a2331
+magenta = #fb5ce
+purple = #b4a4de
+blue = #aabae7
+green = #a2baa8
+yellow = #eacac0
+
+[bar/left]
+
+monitor = DP-2
+monitor-exact = true
+wm-restack = bspwm
+enable-ipc = true
+override-redirect = true
+fixed-center = true
+
+width = 98.5%
+height = 30
+offset-x = 18
+offset-y = 9
+radius = 8
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+separator = %{T2} %{T-}
+padding = 8
+
+#module-margin-left = 6
+module-margin-right = 4
+
+font-0 = Code New Roman Nerd Font:pixelsize=12;1
+font-1 = Code New Roman Nerd Font:pixelsize=24;2
+
+modules-left = bspwm mpd
+modules-right = temperature gputemp
+modules-center = time
+
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+[bar/right]
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+width = 98.5%
+height = 30
+offset-x = 18
+offset-y = 9
+radius = 8
+padding = 6
+
+monitor = DP-4
+monitor-exact = true
+wm-restack = bspwm
+enable-ipc = true
+override-redirect = true
+fixed center = true
+
+module-margin-right = 4
+
+modules-left = bspwm xwindow
+modules-center = time
+modules-right = pulseaudio power
+
+tray-position = right
+tray-scale = 1.0
+tray-padding = 18
+
+separator = %{T2} %{T-}
+
+font-0 = Code New Roman Nerd Font:pixelsize=12;1
+font-1 = Code New Roman Nerd Font:pixelsize=24;3
+
+[module/mpd]
+type = internal/mpd
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/bspwm]
+type = internal/bspwm
+
+enable-scroll = true
+label-focused = %name%
+label-focused-background = #634e75
+label-focused-underline = ${colors.blue}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%!
+label-urgent-background = ${colors.magenta}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 1
+
+format-underline = ${colors.background}
+format-background = ${colors.background}
+format-padding =
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+enable-click = true
+
+; Separator in between workspaces
+label-separator = |
+
+[module/time]
+type = custom/script
+exec = date '+%A, %b %-d, %Y | %-I:%M%P'
+label = "%output%"
+interval = 5
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 1
+base-temperature = 25
+warn-temperature = 70
+units = true
+format = CPU: <label> <ramp>
+label = %temperature-c%
+ramp-0 = |----|
+ramp-1 = |---|
+ramp-2 = |--|
+ramp-3 = |-|
+ramp-4 = ||
+
+[module/gputemp]
+type = custom/script
+exec = nvidia-settings -q gpucoretemp -t | sed -n 2p
+label = "GPU: %output%°C"
+interval = 1
+
+[module/cpu]
+type = internal/cpu
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+
+format-volume = <label-volume> <ramp-volume>
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+label-muted = ﱝ
+label-muted-foreground = ${colors.magenta}
+click-right = pavucontrol
+
+[module/power]
+type = custom/script
+exec = echo "⏻"
+click-left = rofi -show p -modi p:~/Github/rofi-power-menu/rofi-power-menu -width 20 -lines 6 -xoffset 974 -yoffset -586
+
+; vim:ft=dosini

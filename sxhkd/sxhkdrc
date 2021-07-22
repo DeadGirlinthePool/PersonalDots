@@ -5,11 +5,17 @@
 # terminal emulator
 super + t
   	kitty
+# Open a floating terminal that follows you around
+super + shift + t
+   bspc rule -a kitty -o state=floating rectangle=900x600+200+100 sticky=on && kitty
 
 # program launcher
 super + @space
 	rofi -show drun -show-icons
 	
+# Command Runner
+super + shift + @space
+   rofi -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -19,6 +25,10 @@ super + Escape
 ## Change to firejailed firefox!!!!!
 super + f
   firefox
+
+# Shutdown Dialog
+super + Delete
+   rofi -show p -modi p:~/Github/rofi-power-menu/rofi-power-menu -width 24 -lines 6
 
 # bspwm hotkeys
 #
@@ -89,6 +99,9 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# focus next monitor
+super + semicolon
+		bspc monitor -f next
 #
 # preselect
 #

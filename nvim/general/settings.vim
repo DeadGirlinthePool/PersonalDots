@@ -10,6 +10,7 @@ set autoindent
 set number
 set clipboard=unnamedplus
 set formatoptions-=cro
+set title
 "set t_Co=256
 
 set termguicolors
