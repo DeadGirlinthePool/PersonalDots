@@ -66,9 +66,11 @@ modules-left = bspwm xwindow
 modules-center = time
 modules-right = pulseaudio power
 
-tray-position = right
+tray-position = left
 tray-scale = 1.0
-tray-padding = 18
+#tray-padding = 18
+tray-detatched = true
+tray-offset-x = 800
 
 separator = %{T2} %{T-}
 
