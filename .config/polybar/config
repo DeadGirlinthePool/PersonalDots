@@ -32,7 +32,7 @@ padding = 8
 module-margin-right = 4
 
 font-0 = Code New Roman Nerd Font:pixelsize=12;2
-font-1 = Code New Roman Nerd Font:pixelsize=24;2
+font-1 = Code New Roman Nerd Font:pixelsize=24;7
 
 modules-left = bspwm mpd
 modules-right = temperature gputemp
@@ -66,16 +66,16 @@ modules-left = bspwm xwindow
 modules-center = time
 modules-right = pulseaudio power
 
-tray-position = left
+tray-position = center
 tray-scale = 1.0
-#tray-padding = 18
+tray-padding = 2
 tray-detatched = true
-tray-offset-x = 800
+tray-offset-x = 940
 
 separator = %{T2} %{T-}
 
 font-0 = Code New Roman Nerd Font:pixelsize=12;2
-font-1 = Code New Roman Nerd Font:pixelsize=24;3
+font-1 = Code New Roman Nerd Font:pixelsize=24;7
 font-2= Code New Roman Nerd Font:pixelsize=12;4
 
 [module/mpd]
@@ -84,6 +84,7 @@ type = internal/mpd
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+click-left = rofi -show drun -show-icons
 
 [module/bspwm]
 type = internal/bspwm
@@ -141,6 +142,7 @@ type = custom/script
 exec = nvidia-settings -q gpucoretemp -t | sed -n 2p
 label = "GPU: %output%°C"
 interval = 1
+click-left = kitty
 
 [module/cpu]
 type = internal/cpu
@@ -149,7 +151,7 @@ type = internal/cpu
 type = internal/pulseaudio
 use-ui-max = false
 
-format-volume = <label-volume> <ramp-volume>
+format-volume = %{T2} %{T-}<label-volume> <ramp-volume>
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
