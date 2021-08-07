@@ -2,19 +2,21 @@
 
 # bspc config external_rules_command "$(which external_rules)"
 
-#Check if sxhkd is running and start it if not
+# Check if sxhkd is running and start it if not
 pgrep -x sxhkd > /dev/null || sxhkd &
- 
+
 # Check if Picom is running, start it if not
 pgrep picom > /dev/null || picom --experimental-backends --backend glx &
 
 # Check for Wallpaper and load it
 feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/abstract-pink-5120x1440.jpg &
 
+# Same deal, for Dunst
+pgrep dunst > /dev/null || dunst &
 
 #Create 3 desktops on each monitor
-bspc monitor DP-4 -d 1 2 3 
-bspc monitor DP-2 -d 1 2 3 
+bspc monitor DP-4 -d 1 2 3
+bspc monitor DP-2 -d 1 2 3
 
 # "Dwindle" style window layout
 bspc config automatic_scheme longest_side
@@ -53,4 +55,9 @@ bspc rule -a Gnome-calculator state=floating rectangle=400x600+200+200
 
 # Start Polybar (this didnt like being at the top but I cant remember why)
 pgrep polybar > /dev/null || (polybar left & polybar right &)
+
+# Start tray applets for polybar (maybe this should become integrated into a polybar init script)
+pgrep nm-applet > /dev/null || nm-applet &
+
+pgrep blueman-applet > /dev/null || blueman-applet &
 
